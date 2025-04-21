@@ -1,9 +1,12 @@
 package org.example;
 
-public class Usuario extends Pessoa{
+public class Usuario extends Pessoa implements AcoesUsuario{
     private String login;
     private int totAssistido;
     private int expGanha;
+    private String comments;
+    private Usuario send;
+    private Usuario receiver;
 
     public Usuario(String nome, int idade, char sexo, String login) {
         super(nome, idade, sexo);
@@ -28,6 +31,20 @@ public class Usuario extends Pessoa{
         titleVd.setViews(titleVd.getViews()+1);
     }
 
+    @Override
+    public void sendVideo() {
+
+    }
+    @Override
+    public void comentar() {
+
+    }
+
+    @Override
+    public void execLike() {
+
+    }
+
     public String getLogin() {
         return login;
     }
@@ -50,6 +67,30 @@ public class Usuario extends Pessoa{
 
     public void setExpGanha(int expGanha) {
         this.expGanha = expGanha;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public Usuario getSend() {
+        return send;
+    }
+
+    public void setSend(Usuario send) {
+        this.send = send;
+    }
+
+    public Usuario getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(Usuario receiver) {
+        this.receiver = receiver;
     }
 
     @Override
