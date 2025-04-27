@@ -1,20 +1,30 @@
 package org.example;
 
 public class Funcoes extends Usuario {
+    private final Video Video;
     private Video selecVideo;
-    private Video curtidasF;
-    private Video viewsF;
 
-    public Funcoes(String nome, int idade, char sexo, String login, Video selecVideo) {
+    public Funcoes(String nome, int idade, char sexo, String login, Video video) {
         super(nome, idade, sexo, login);
+        Video = video;
+        this.selecVideo = Video;
+    }
+
+    public Video getSelecVideo() {
+        return selecVideo;
+    }
+
+    public void setSelecVideo(Video selecVideo) {
         this.selecVideo = selecVideo;
     }
 
+//=====
+
     public double CalculoPerCentLikes(){
-        if (this.viewsF.getViews() == 0){
+        if (selecVideo.getViews() == 0){
             return 0; //para evitar divisões por 0
         }
-        return (double) this.curtidasF.getCurtidas()/this.viewsF.getViews() * 100;
+        return (double) selecVideo.getCurtidas()/selecVideo.getViews() * 100;
     }
 
     public int calculoEstrelas(){
@@ -40,30 +50,6 @@ public class Funcoes extends Usuario {
         this.selecVideo.setCurtidas(this.selecVideo.getCurtidas()+1);
         this.selecVideo.setAvaliacao(this.calculoEstrelas());
         System.out.println("👍🏽");
-    }
-
-    public Video getSelecVideo() {
-        return selecVideo;
-    }
-
-    public void setSelecVideo(Video selecVideo) {
-        this.selecVideo = selecVideo;
-    }
-
-    public Video getCurtidasF() {
-        return curtidasF;
-    }
-
-    public void setCurtidasF(Video curtidasF) {
-        this.curtidasF = curtidasF;
-    }
-
-    public Video getViewsF() {
-        return viewsF;
-    }
-
-    public void setViewsF(Video viewsF) {
-        this.viewsF = viewsF;
     }
 
 }
