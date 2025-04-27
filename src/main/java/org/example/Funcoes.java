@@ -1,7 +1,7 @@
 package org.example;
 
 public class Funcoes extends Usuario {
-    private final Video Video;
+    private Video Video;
     private Video selecVideo;
 
     public Funcoes(String nome, int idade, char sexo, String login, Video video) {
