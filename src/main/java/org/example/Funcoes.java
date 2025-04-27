@@ -1,13 +1,11 @@
 package org.example;
 
 public class Funcoes extends Usuario {
-    private Video Video;
     private Video selecVideo;
 
     public Funcoes(String nome, int idade, char sexo, String login, Video video) {
         super(nome, idade, sexo, login);
-        Video = video;
-        this.selecVideo = Video;
+        this.selecVideo = video;
     }
 
     public Video getSelecVideo() {
@@ -20,7 +18,7 @@ public class Funcoes extends Usuario {
 
 //=====
 
-    public double CalculoPerCentLikes(){
+    public double calcPerCentLikes(){
         if (selecVideo.getViews() == 0){
             return 0; //para evitar divisões por 0
         }
@@ -28,7 +26,7 @@ public class Funcoes extends Usuario {
     }
 
     public int calculoEstrelas(){
-        double perCentLikes = CalculoPerCentLikes();
+        double perCentLikes = calcPerCentLikes();
 
         if (perCentLikes >= 80){
             return 5;

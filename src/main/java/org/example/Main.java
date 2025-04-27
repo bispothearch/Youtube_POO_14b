@@ -1,23 +1,24 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
 
-        Video[] vd = new Video[3];
-        vd[0] = new Video("O FIM DA PICADA ¬_¬");
-        vd[1] = new Video("ABUBU MOOD xD");
-        vd[2] = new Video("CANSEI DESSE PROJETO :/");
+        ArrayList<Video> videos = new ArrayList<>();
+        videos.add(new Video("Tlou2 - Trailer"));
+        videos.add(new Video("Abubu Mood XD"));
+        videos.add(new Video("CANSEI DESSE PROJETO :/ ..."));
 
-        Funcoes[] func = new Funcoes[3];
-        func[0] = new Funcoes("Sisi", 23, 'F', "roseSisx0", vd[0]);
+        ArrayList<Funcoes> user = new ArrayList<>();
+        user.add(new Funcoes("Jack",19, 'M',"tomaJack69", videos.get(2)));
 
-        func[0].assistirVideo(vd[0]);
-        System.out.println(vd[0].toString());
+        user.getFirst().assistirVideo(videos.get(2));
+        System.out.println(videos.getFirst().toString());
 
-        func[0].execLike();
-        System.out.println(vd[0].getCurtidas());
-        System.out.println(vd[0].getAvaliacao());
+        user.getFirst().execLike();
 
-        System.out.println(vd[0].toString());
+        System.out.println("Curtidas: " + videos.get(2).getCurtidas());
+        System.out.println("Avaliação: " + videos.get(2).getAvaliacao());
     }
     }
