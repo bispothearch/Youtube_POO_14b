@@ -1,14 +1,11 @@
 package org.example;
 
-public class Usuario extends Pessoa implements AcoesUsuario{
+public class User extends Person implements UserActions {
     private String login;
     private int totAssistido;
     private int expGanha;
-    private String comments;
-    private Usuario send;
-    private Usuario receiver;
 
-    public Usuario(String nome, int idade, char sexo, String login) {
+    public User(String nome, int idade, char sexo, String login) {
         super(nome, idade, sexo);
         this.login = login;
         this.setTotAssistido(0);
@@ -25,25 +22,27 @@ public class Usuario extends Pessoa implements AcoesUsuario{
     }
 
     public void assistirVideo(Video titleVd){
-        System.out.println("\nO user " + Usuario.super.getNome() + " acabou de assistir: '" + titleVd.getTitulo() + "'.\n");
+        System.out.println("\nO user " + User.super.getNome() + " acabou de assistir: '" + titleVd.getTitulo() + "'.\n");
         viuMaisUm();
         ganharExp();
         titleVd.setViews(titleVd.getViews()+1);
     }
 
     @Override
-    public void sendVideo() {
-
-    }
-    @Override
-    public void comentar() {
+    public void sendVideo(User receiver, Video video) {
 
     }
 
     @Override
-    public void execLike() {
+    public void commentVideo(Video video, String comment) {
 
     }
+
+    @Override
+    public void execLike(Video selecVideo) {
+
+    }
+
 
     public String getLogin() {
         return login;
@@ -69,29 +68,6 @@ public class Usuario extends Pessoa implements AcoesUsuario{
         this.expGanha = expGanha;
     }
 
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
-    public Usuario getSend() {
-        return send;
-    }
-
-    public void setSend(Usuario send) {
-        this.send = send;
-    }
-
-    public Usuario getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(Usuario receiver) {
-        this.receiver = receiver;
-    }
 
     @Override
     public String toString() {

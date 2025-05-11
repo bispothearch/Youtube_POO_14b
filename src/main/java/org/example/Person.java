@@ -1,12 +1,12 @@
 package org.example;
 
-public abstract class Pessoa {
+public abstract class Person {
     protected String nome;
     protected int idade;
     protected char sexo;
     protected int exp;
 
-    public Pessoa(String nome, int idade, char sexo) {
+    public Person(String nome, int idade, char sexo) {
         this.nome = nome;
         this.idade = idade;
         this.sexo = sexo;
@@ -49,7 +49,7 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{ " +
+        return "Person{ " +
                 "nome='" + nome + '\'' +
                 ", idade=" + idade +
                 ", sexo=" + sexo +

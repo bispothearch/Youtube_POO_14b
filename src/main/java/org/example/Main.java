@@ -5,20 +5,17 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
+       ArrayList<User> user = new ArrayList<>();
+       user.add(new User("Samuel",18,'M',"sadam777"));
+       user.add(new User("Yuri",19,'M',"bispo72"));
+       user.add(new User("Anna",19,'F',"annabanana"));
+
         ArrayList<Video> videos = new ArrayList<>();
-        videos.add(new Video("Tlou2 - Trailer"));
+        videos.add(new Video("Java POO"));
         videos.add(new Video("Abubu Mood XD"));
-        videos.add(new Video("CANSEI DESSE PROJETO :/ ..."));
+        videos.add(new Video("BispoTheArch - Ascent"));
 
-        ArrayList<Funcoes> user = new ArrayList<>();
-        user.add(new Funcoes("Jack",19, 'M',"tomaJack69", videos.get(2)));
+        Functions functionsSamuel = new Functions(user.get(0).getNome(), user.get(0).getIdade(), user.get(0).getSexo(),user.get(0).getLogin(),  videos.get(1));
 
-        user.getFirst().assistirVideo(videos.get(2));
-        System.out.println(videos.getFirst().toString());
-
-        user.getFirst().execLike();
-
-        System.out.println("Curtidas: " + videos.get(2).getCurtidas());
-        System.out.println("Avaliação: " + videos.get(2).getAvaliacao());
     }
     }

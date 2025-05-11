@@ -1,22 +1,10 @@
 package org.example;
 
-public class Video implements AcoesVideo{
+public class Video {
     private String titulo;
     private int avaliacao;
     private int views;
     private int curtidas;
-    private boolean reproduzindo;
-
-    @Override
-    public void play() {
-        this.setReproduzindo(true);
-        System.out.println("Video.play...");;
-    }
-    @Override
-    public void pause() {
-        this.setReproduzindo(false);
-        System.out.println("Video.pause...");
-    }
 
     public int getViews() {
         return views;
@@ -42,12 +30,6 @@ public class Video implements AcoesVideo{
     public void setCurtidas(int curtidas) {
         this.curtidas = curtidas;
     }
-    public boolean isReproduzindo() {
-        return reproduzindo;
-    }
-    public void setReproduzindo(boolean reproduzindo) {
-        this.reproduzindo = reproduzindo;
-    }
 
     //Construct
     public Video(String titulo) {
@@ -55,7 +37,6 @@ public class Video implements AcoesVideo{
         this.setAvaliacao(avaliacao);
         this.setViews(0);
         this.setCurtidas(0);
-        this.setReproduzindo(false);
     }
 
     @Override
@@ -64,8 +45,6 @@ public class Video implements AcoesVideo{
                 "Titulo - '" + titulo + '\'' +
                 "; Avaliação - " + avaliacao +
                 " estrela(s); " + views + " views e "
-                + curtidas + " curtidas" +
-                "; Status de execução: " + reproduzindo +
-                ".";
+                + curtidas + " curtidas.";
     }
 }

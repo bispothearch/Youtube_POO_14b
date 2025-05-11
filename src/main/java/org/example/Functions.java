@@ -1,9 +1,11 @@
 package org.example;
 
-public class Funcoes extends Usuario {
+import org.jetbrains.annotations.NotNull;
+
+public class Functions extends User implements UserActions {
     private Video selecVideo;
 
-    public Funcoes(String nome, int idade, char sexo, String login, Video video) {
+    public Functions(String nome, int idade, char sexo, String login, Video video) {
         super(nome, idade, sexo, login);
         this.selecVideo = video;
     }
@@ -44,10 +46,21 @@ public class Funcoes extends Usuario {
     }
 
     @Override
-    public void execLike() {
-        this.selecVideo.setCurtidas(this.selecVideo.getCurtidas()+1);
-        this.selecVideo.setAvaliacao(this.calculoEstrelas());
-        System.out.println("👍🏽");
+    public void sendVideo(User receiver, Video video) {
+        InterationUser interation = new InterationUser(this, video);
+        interation.shareVd(receiver);
     }
 
+    @Override
+    public void commentVideo(Video video, String comment) {
+        InterationUser interation = new InterationUser(this, video);
+        interation.addComment(comment);
+    }
+
+    @Override
+    public void execLike(@NotNull Video selecVideo) {
+        selecVideo.setCurtidas(selecVideo.getCurtidas()+1);
+        selecVideo.setAvaliacao(calculoEstrelas());
+        System.out.println("👍🏽");
+    }
 }
