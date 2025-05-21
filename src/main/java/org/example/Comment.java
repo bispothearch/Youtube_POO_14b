@@ -1,11 +1,11 @@
 package org.example;
 
-public class CommentVd {
+public class Comment {
     private User autor;
     private String text;
     private String date;
 
-    public CommentVd(User autor, String text) {
+    public Comment(User autor, String text) {
         this.autor = autor;
         this.text = text;
         this.date = java.time.LocalDateTime.now().toString();
@@ -25,7 +25,7 @@ public class CommentVd {
 
     @Override
     public String toString() {
-        return "CommentVd{" +
+        return "Comment{" +
                 "Usuário: " + autor +
                 "\n" + text +
                 "\nData: " + date + '\'' +

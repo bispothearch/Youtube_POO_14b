@@ -6,27 +6,23 @@ import java.util.List;
 public class InterationUser {
     private User autor;
     private Video video;
-    private List<CommentVd> comments;
     private List<User> shares;
 
-    public InterationUser(User autor, Video video) {
-        this.autor = autor;
-        this.video = video;
-        this.comments = new ArrayList<>();
+    public InterationUser() {
         this.shares = new ArrayList<>();
     }
 
-    public void addComment(String text){
-        CommentVd newComment = new CommentVd(autor, text);
-        comments.add(newComment);
+    //Gerencia a ação de comentar
+    public void addComments(User autor, Video video, String text){
+        Comment newComment = new Comment(autor, text);
+        video.recordComments(newComment);
+
+        System.out.println("Vídeo: "+ '\''+ video.getTitulo() + '\'');
+        System.out.println(autor.getNome() + " comentou: " + text);
+        System.out.println();
     }
 
     public void shareVd(User receiver){
-        shares.add(receiver);
-        System.out.println("Video compartilhado com " + receiver.getNome());
-    }
 
-    public List<CommentVd> getComments() {
-        return comments;
     }
 }
