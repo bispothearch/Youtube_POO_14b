@@ -1,4 +1,7 @@
-package org.example;
+package main.java.service;
+
+import main.java.model.User;
+import main.java.model.Video;
 
 public interface UserActions {
     public abstract void sendVideo(User receiver, Video video);

@@ -1,4 +1,4 @@
-package org.example;
+package testYt;
 
 public class User extends Person implements UserActions {
     private String login;

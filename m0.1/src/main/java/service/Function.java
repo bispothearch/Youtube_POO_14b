@@ -1,16 +1,20 @@
-package org.example;
+package main.java.service;
 
+import main.java.model.Video;
 import org.jetbrains.annotations.NotNull;
+import testYt.InterationUser;
+import testYt.User;
+import testYt.UserActions;
 
 import java.util.ArrayList;
 
-public class Functions extends User implements UserActions {
+public class Function extends User implements UserActions {
     private Video selecVideo;
     private int expGanha;
     private ArrayList<Video> history;
     private final InterationUser interagent;
 
-    public Functions(String nome, int idade, char sexo, String login){
+    public Function(String nome, int idade, char sexo, String login){
         super(nome, idade, sexo, login);
         this.interagent = new InterationUser();
     }

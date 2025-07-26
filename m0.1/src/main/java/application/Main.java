@@ -1,4 +1,8 @@
-package org.example;
+package main.java.application;
+
+import main.java.service.Function;
+import main.java.model.User;
+import main.java.model.Video;
 
 import java.util.ArrayList;
 
@@ -15,8 +19,8 @@ public class Main {
         videos.add(new Video("CLT DELETE???"));
         videos.add(new Video("2025.2 - Logo ali. OQ VC JÁ FEZ?"));
 
-        Functions functionsSamuel = new Functions(user.get(0).getNome(), user.get(0).getIdade(), user.get(0).getSexo(),user.get(0).getLogin());
-        Functions functionsAnna = new Functions(user.get(2).getNome(), user.get(2).getIdade(), user.get(2).getSexo(), user.get(2).getLogin());
+        Function functionsSamuel = new Function(user.get(0).getNome(), user.get(0).getIdade(), user.get(0).getSexo(),user.get(0).getLogin());
+        Function functionsAnna = new Function(user.get(2).getNome(), user.get(2).getIdade(), user.get(2).getSexo(), user.get(2).getLogin());
 
         //Comentando
         functionsAnna.commentVideo(videos.get(2),"Sinto que estou progredindo bem, vivendo coisas inimagináveis. :D");

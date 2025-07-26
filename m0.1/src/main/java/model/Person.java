@@ -1,4 +1,4 @@
-package org.example;
+package main.java.model;
 
 public abstract class Person {
     protected String nome;

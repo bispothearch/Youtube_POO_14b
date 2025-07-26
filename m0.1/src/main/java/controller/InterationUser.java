@@ -1,4 +1,8 @@
-package org.example;
+package main.java.controller;
+
+import main.java.model.Comment;
+import main.java.model.User;
+import main.java.model.Video;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.example;
+package testYt;
 
 public class Comment {
     private User autor;
